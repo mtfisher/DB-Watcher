@@ -1,0 +1,22 @@
+'task2':
+   rules:
+      DatabaseIs:
+        database: 'cmsapp'
+      DmlIs:
+        dml: 'update'
+      TableIs:
+        table: 'config'
+   actions:
+     Logger:
+       level: 'warning'
+'task3':
+   rules:
+      DatabaseIs:
+        database: 'cmsapp'
+      DmlIs:
+        dml: 'delete'
+      TableIs:
+        table: 'config'
+   actions:
+     Logger:
+       level: 'alert'

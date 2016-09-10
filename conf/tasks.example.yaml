@@ -1,0 +1,58 @@
+# here is a task a task contains rules and actions chained together
+'task1':
+  rules:
+    # For a rule to check the database use a 'DatabaseIs' rule
+    DatabaseIs:
+      # 'DatabaseIs' takes an argument called 'database' which is the database you want the rule to be trigered
+      # Please note this argument is case sensitive
+      database: 'cmsapp'
+    # For query types use the 'DmlIs' rule
+    DmlIs:
+      # 'DmlIs' takes an argument called 'dml' which may be one of 'insert','update','delete for respective queries'
+      dml: 'insert'
+    # For rule to check table name use he 'TableIs'
+    TableIs:
+      # TableIs takes an argument called table where the specific table you want to watch for is given
+      # Please note this argument is case sensitive
+      table: 'config'
+  actions:
+    # The logger uses monolog for the logging however an alert level needs to be specified
+    # and the message will be raised against that alert level
+    Logger:
+      # Logger takes in the alert level to raise a message against
+      # Values can be 'info', 'warning' or 'alert'
+      # Please note multiple monolog loggers can be chained together with different alert levels
+      level: 'info'
+'task2':
+   rules:
+      DmlIs:
+        dml: 'update'
+      TableIs:
+        table: 'config'
+   actions:
+     Logger:
+       level: 'warning'
+'task3':
+   rules:
+      DatabaseIs:
+        database: 'cmsapp'
+      DmlIs:
+        dml: 'delete'
+      TableIs:
+        table: 'config'
+   actions:
+     Logger:
+       level: 'alert'
+#for custom please use the following
+'task4':
+  'rules':
+    #please use ~ if no arguments are needed
+    '\your\fullname\space\to\your\custom\rule': ~
+    '\your\fullname\space\to\your\custom\ruleTwo':
+      'argument_key': 'value'
+  actions:
+    #please use ~ if no arguments are needed
+    '\your\fullname\space\to\your\custom\action': ~
+    '\your\fullname\space\to\your\custom\actionTwo':
+          'argument_key': 'value'
+        
