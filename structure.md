@@ -7,7 +7,7 @@ User defines tasks a task may contain:
 
 If all rules pass then all actions will be ran
 
-## Maxwell Format
+## Maxwell Format for Db Changes
 ```json
   {
   "database":"cmsapp",
@@ -29,4 +29,14 @@ If all rules pass then all actions will be ran
   "commit":true,
   "data":{"id":3,"path":"key3","setting_vale":"bar"}
   }
+  
+  {
+    "database":"cmsapp",
+    "table":"cms_settings",
+    "type":"delete",
+    "ts":1471783231,
+    "xid":439,
+    "commit":true,
+    "data":{"id":3,"path":"key3","setting_vale":"bar"}
+    }
 ```
