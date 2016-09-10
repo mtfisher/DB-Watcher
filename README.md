@@ -1,5 +1,7 @@
 # DB Watcher
 
+[![Build Status](https://travis-ci.org/mtfisher/DB-Watcher.svg?branch=master)](https://travis-ci.org/mtfisher/DB-Watcher)
+
 So officially many sites which handle card transactions indirectly or directly.
 Should have file integrity monitoring on their servers, with the use of tools like OSSEC.
 However many attackers these days are inserting card detail skimming javascript via the database rather
