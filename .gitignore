@@ -16,3 +16,7 @@
 composer.lock
 bin/phpunit
 vendor/
+
+#### main config files
+conf/tasks.yaml
+conf/container.conf.php
