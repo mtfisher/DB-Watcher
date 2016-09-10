@@ -1,0 +1,18 @@
+#### Binary files we do not want
+*.tar
+*.gz
+*.7z
+*.bz
+*.bz2
+*.zip
+
+####  IDE Specific
+.project
+.buildpath
+.settings/*
+.idea/
+
+#### composer
+composer.lock
+bin/phpunit
+vendor/
